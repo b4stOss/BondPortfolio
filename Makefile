@@ -1,4 +1,4 @@
-CC = gcc-14
+CC = gcc
 LIBS = -ljson-c
 INCLUDE_DIR = include
 SRC_DIR = src
