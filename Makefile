@@ -1,5 +1,5 @@
 CC = gcc
-LIBS = -ljson-c
+LIBS = -ljson-c -lm
 INCLUDE_DIR = include
 SRC_DIR = src
 
