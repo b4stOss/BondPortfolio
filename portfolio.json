@@ -1,0 +1,1 @@
+{ "bonds": [ { "identifier": "FR10Y", "face_value": 1000.0, "coupon_rate": 3.5, "years_to_maturity": 10, "frequency_of_payments": 1, "discount_rate": 2.0 } ], "bond_count": 1 }

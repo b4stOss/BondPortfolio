@@ -11,8 +11,10 @@ int main() {
     Portfolio portfolio = create_portfolio();
 
     do {
+        clear_screen();
         display_main_menu();
         choice = get_user_choice();
+        clear_screen();
         
         switch (choice) {
             case 1:
@@ -39,6 +41,7 @@ int main() {
             default:
                 printf("Invalid choice. Please try again.\n");
         }
+        wait_for_user();
     } while (choice != 7);
 
     return 0;
