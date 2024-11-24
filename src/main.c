@@ -21,20 +21,24 @@ int main() {
                 add_new_bond_to_portfolio(&portfolio);
                 break;
             case 2:
-                calculate_portfolio_value(&portfolio);
-                break;
-            case 3:
                 perform_scenario_analysis(&portfolio);
                 break;
-            case 4:
+            case 3:
                 view_portfolio_summary(&portfolio);
                 break;
-            case 5:
+            case 4:
                 save_portfolio(&portfolio);
                 break;
-            case 6:
+            case 5:
                 load_portfolio(&portfolio);
                 break;
+            case 6: {
+                char identifier[50];
+                printf("Enter Bond Identifier to delete: ");
+                scanf("%s", identifier);
+                delete_bond(&portfolio, identifier);
+                break;
+            }
             case 7:
                 printf("Exiting the program.\n");
                 break;
@@ -44,17 +48,19 @@ int main() {
         wait_for_user();
     } while (choice != 7);
 
+    free_portfolio(&portfolio);
     return 0;
 }
 
+// Function to display the main menu
 void display_main_menu() {
     printf("Bond Portfolio Calculator\n");
     printf("1. Add New Bond to Portfolio\n");
-    printf("2. Calculate Portfolio Value\n");
-    printf("3. Scenario Analysis\n");
-    printf("4. View Portfolio Summary\n");
-    printf("5. Save Portfolio\n");
-    printf("6. Load Portfolio\n");
+    printf("2. Scenario Analysis\n");
+    printf("3. View Portfolio Summary\n");
+    printf("4. Save Portfolio to File\n");
+    printf("5. Load Portfolio to File\n");
+    printf("6. Delete Bond from Portfolio\n");
     printf("7. Exit\n");
 }
 

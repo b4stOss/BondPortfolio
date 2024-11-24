@@ -1,17 +1,25 @@
 #include "utils.h"
 #include <stdio.h>
+#include <stdlib.h>
 
+// Function to validate input within a specified range
 int validate_input(double value, double min, double max) {
-    return (value >= min && value <= max);
+    return value >= min && value <= max;
 }
 
+// Function to wait for user input before continuing
 void wait_for_user() {
     printf("Press Enter to continue...");
-    while (getchar() != '\n'); // Clear the input buffer
-    getchar(); // Wait for Enter key
+    getchar();
+    getchar(); // To consume the newline character left by scanf
 }
 
+// Function to clear the terminal screen
 void clear_screen() {
-    // Clear the terminal
-    printf("\033[H\033[J");
+    // Platform-specific clear screen
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
